@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.78.0'
+project:
+    name: Admin-Plus-Template
+    package:
+        name: Admin-Plus-Template
+        api_version: '59.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Admin-Plus-Template/tests
+            options:
+                outputdir: robot/Admin-Plus-Template/results
+
+    robot_testdoc:
+        options:
+            path: robot/Admin-Plus-Template/tests
+            output: robot/Admin-Plus-Template/doc/Admin-Plus-Template_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
